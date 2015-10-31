@@ -19,9 +19,15 @@ public class TestInfo {
     @DatabaseField
     private int count;
     @DatabaseField
-    private int wrongScore;
+    private int wrongScore = 0;
     @DatabaseField
-    private int correctScore;
+    private int correctScore = 1;
     @DatabaseField
-    private boolean active;
+    private boolean active = true;
+
+    public TestInfo(String name, String code, int count) {
+        this.name = name;
+        this.code = code;
+        this.count = count;
+    }
 }

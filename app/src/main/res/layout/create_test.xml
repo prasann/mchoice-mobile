@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    android:background="@color/primary_material_dark">
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,12 +25,12 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Name :"
-            android:id="@+id/testName" />
+            android:id="@+id/testNameLabel" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editText"
+            android:id="@+id/testName"
             android:layout_gravity="center_horizontal" />
 
         <TextView
@@ -37,26 +38,26 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Code :"
-            android:id="@+id/testCode" />
+            android:id="@+id/testCodeLabel" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editText2" />
+            android:id="@+id/testCode" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="No. Of Questions :"
-            android:id="@+id/testCount" />
+            android:id="@+id/testCountLabel" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="numberSigned"
             android:ems="10"
-            android:id="@+id/editText3" />
+            android:id="@+id/testCount" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -118,10 +119,12 @@
     </LinearLayout>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Create Test"
-        android:id="@+id/submit_btn"
-        android:layout_gravity="center_horizontal" />
+        android:text="NEXT  >>"
+        android:id="@+id/done"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_top_10"
+        android:background="@color/colorPrimary" />
 
 </LinearLayout>
