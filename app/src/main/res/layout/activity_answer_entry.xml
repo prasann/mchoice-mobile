@@ -18,12 +18,12 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/done_final"
+            android:id="@+id/submit_choices"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/margin_top_10"
             android:background="@color/colorPrimary"
-            android:text="Done" />
+            android:text="@string/submit_choices" />
     </LinearLayout>
 </ScrollView>

@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">MChoice</string>
     <string name="action_settings">Settings</string>
+    <string name="submit_choices">Done</string>
+    <string name="create_test_header">Test Details</string>
+    <string name="test_name_label">Name :</string>
+    <string name="test_code_label">Code :</string>
+    <string name="test_count_label">No. Of Questions :</string>
+    <string name="negative_score_label">Negative points for wrong answers</string>
+    <string name="correct_score_label">Points for correct answers</string>
+    <string name="enter_choices_screen"><![CDATA[NEXT >>]]></string>
 </resources>

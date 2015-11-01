@@ -9,8 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Test Details"
-        android:id="@+id/createTest"
+        android:text="@string/create_test_header"
         android:gravity="center"
         android:textStyle="bold" />
 
@@ -24,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Name :"
+            android:text="@string/test_name_label"
             android:id="@+id/testNameLabel" />
 
         <EditText
@@ -37,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Code :"
+            android:text="@string/test_code_label"
             android:id="@+id/testCodeLabel" />
 
         <EditText
@@ -49,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="No. Of Questions :"
+            android:text="@string/test_count_label"
             android:id="@+id/testCountLabel" />
 
         <EditText
@@ -75,7 +74,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Negative points for wrong answers"
+                    android:text="@string/negative_score_label"
                     android:layout_gravity="center_horizontal"
                     android:id="@+id/wrongScoreText"
                     android:textAlignment="center" />
@@ -100,7 +99,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Points for correct answers"
+                    android:text="@string/correct_score_label"
                     android:id="@+id/correctScoreText"
                     android:layout_gravity="center_horizontal"
                     android:textAlignment="center" />
@@ -121,7 +120,7 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="NEXT  >>"
+        android:text="@string/enter_choices_screen"
         android:id="@+id/done"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/margin_top_10"

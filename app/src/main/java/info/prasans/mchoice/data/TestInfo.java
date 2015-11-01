@@ -14,7 +14,7 @@ public class TestInfo {
     private Integer id;
     @DatabaseField(canBeNull = false)
     private String name;
-    @DatabaseField(unique = true)
+    @DatabaseField(unique = true, index = true)
     private String code;
     @DatabaseField
     private int count;
@@ -24,6 +24,8 @@ public class TestInfo {
     private int correctScore = 1;
     @DatabaseField
     private boolean active = true;
+    @DatabaseField
+    private String answerString;
 
     public TestInfo(String name, String code, int count) {
         this.name = name;
