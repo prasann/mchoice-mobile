@@ -58,7 +58,7 @@ public class CreateTest extends AppCompatActivity {
                 testInfo.setCorrectScore(((NumberPicker) findViewById(R.id.correctScore)).getValue());
                 String serializedTestInfo = new Gson().toJson(testInfo);
 
-                Intent nextIntent = new Intent(CreateTest.this, AnswerEntry.class);
+                Intent nextIntent = new Intent(CreateTest.this, EnterChoice.class);
                 nextIntent.putExtra(TEST_INFO_SERIALIZED, serializedTestInfo);
                 CreateTest.this.startActivity(nextIntent);
             }
