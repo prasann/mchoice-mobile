@@ -4,11 +4,13 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @DatabaseTable
 @Getter
 @Setter
+@NoArgsConstructor
 public class TestInfo {
     @DatabaseField(generatedId = true)
     private Integer id;

@@ -3,16 +3,27 @@ package info.prasans.mchoice.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ListView;
+
+import com.j256.ormlite.android.apptools.OpenHelperManager;
+
+import java.sql.SQLException;
+import java.util.List;
 
 import info.prasans.mchoice.R;
+import info.prasans.mchoice.adapters.TestInfoAdapter;
+import info.prasans.mchoice.data.DatabaseHelper;
+import info.prasans.mchoice.data.TestInfo;
 
 public class HomeActivity extends AppCompatActivity {
+
+    private DatabaseHelper databaseHelper = null;
+    private TestInfoAdapter testInfoAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +31,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        ListView testInfoList = (ListView) findViewById(R.id.test_info_list);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -31,6 +43,31 @@ public class HomeActivity extends AppCompatActivity {
                 HomeActivity.this.startActivity(createTestIntent);
             }
         });
+
+        try {
+            List<TestInfo> testInfos = getHelper().getTestInfoDao().queryForAll();
+            testInfoAdapter = new TestInfoAdapter(this, R.layout.test_info, testInfos);
+            testInfoList.setAdapter(testInfoAdapter);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (databaseHelper != null) {
+            OpenHelperManager.releaseHelper();
+            databaseHelper = null;
+        }
+    }
+
+    private DatabaseHelper getHelper() {
+        if (databaseHelper == null) {
+            databaseHelper = OpenHelperManager.getHelper(this, DatabaseHelper.class);
+        }
+        return databaseHelper;
     }
 
     @Override
